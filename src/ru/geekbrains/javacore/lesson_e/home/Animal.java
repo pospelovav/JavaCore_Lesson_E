@@ -14,10 +14,26 @@ public abstract class Animal {
         this.color = color;
     }
 
-    boolean run(float distance){
-        if (distance <= RunLimit) {
-            return true;
-        }
-        return false;
+    String run(float distance){
+        String mes = "Run " + String.format("%.1f", distance) + " m, ";
+        return mes;
     }
+
+    String swim(float distance){
+        String mes = "";
+        if (distance == 0) {
+            mes = "Refuse to swim, ";
+        } else {
+            mes = "Swim " + String.format("%.1f", distance) + " m, ";
+        }
+        return mes;
+    }
+
+    String jump(float height){
+        String mes = "Jump " + String.format("%.1f", height) + " m";
+        return mes;
+    }
+
+
+
 }

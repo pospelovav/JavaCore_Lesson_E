@@ -3,30 +3,31 @@ package ru.geekbrains.javacore.lesson_e.home;
 
 public class Main {
     public static void main (String[] args){
-        Cat catOne = new Cat("Barseek", "White", 3);
-        Dog dogOne = new Dog("Toozeek", "Black", 5);
-        //System.out.println(catOne.RunLimit);
-        float RunDistance = 200;   //дистанция забега для всех животных
+        Cat catOne = new Cat("Vasya", "Grey", 2);
+        Cat catTwo = new Cat("Murzik", "Black&White", 1);
+        Dog dogOne = new Dog("Sharik", "White&Grey", 3);
+        Dog dogTwo = new Dog("Bor", "Brown", 7);
+        Cat catTree = new Cat("Barseek", "White", 3);
+        Dog dogTree = new Dog("Toozeek", "Black", 5);
+
         String animalType = "";
-       // dogOne.run(150);
-        Animal[] OurAnimals = {catOne, dogOne};
+
+        Animal[] OurAnimals = {catOne, catTwo, catTree, dogOne, dogTwo, dogTree};
         for (int i = 0; i < OurAnimals.length; i++) {
-            if (OurAnimals[i] instanceof Cat){
+            if (OurAnimals[i] instanceof Cat) {
                 animalType = "Cat";
             }
-            if (OurAnimals[i] instanceof Dog){
+            if (OurAnimals[i] instanceof Dog) {
                 animalType = "Dog";
             }
-            if (OurAnimals[i].run(RunDistance)){
-                System.out.print(animalType + " '" + OurAnimals[i].name + "' is Run! ");
-                System.out.println("'" + OurAnimals[i].name + "' can run " + String.format("%.1f",OurAnimals[i].RunLimit) + " m");
-            } else {
-                System.out.print(animalType + " '" + OurAnimals[i].name + "' do not Run! ");
-                System.out.println("'" + OurAnimals[i].name + "' could only run " + String.format("%.1f",OurAnimals[i].RunLimit) + " m");
-            }
-
+            System.out.print(animalType + " '" + OurAnimals[i].name + "': ");
+            System.out.print(OurAnimals[i].run(OurAnimals[i].RunLimit));
+            System.out.print(OurAnimals[i].swim(OurAnimals[i].SwimLimit));
+            System.out.print(OurAnimals[i].jump(OurAnimals[i].JumpLimit));
+            System.out.println();
 
         }
+
 
     }
 
